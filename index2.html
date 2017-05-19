@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment-with-locales.js"></script>
+    <script src="angular-moment-picker.js"></script>
+    <link rel="stylesheet" href="angular-moment-picker.css">
+    <script src="script.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Angular Moment Picker</title>
+  </head>
+  <body ng-controller="home as h">
+    <div>
+      <h1>Angular Moment Picker</h1>
+      <hr>
+      <input class="form-control"
+        ng-model="h.input"
+        ng-model-options="{ updateOn: 'blur' }"
+        placeholder="Select a date..."
+        moment-picker="h.input">
+      <h3>{{h.input}}</h3>
+      <hr>
+      <span moment-picker="h.component">
+        {{ h.component || 'Click here to select a date' }}
+      </span>
+    </div>
+  </body>
+</html>
